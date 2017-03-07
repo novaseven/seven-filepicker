@@ -1,0 +1,84 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "seven-filepicker@git+https://github.com/novaseven/seven-filepicker.git",
+        "scope": null,
+        "escapedName": "seven-filepicker",
+        "name": "seven-filepicker",
+        "rawSpec": "git+https://github.com/novaseven/seven-filepicker.git",
+        "spec": "git+https://github.com/novaseven/seven-filepicker.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:novaseven/seven-filepicker.git",
+          "sshUrl": "git+ssh://git@github.com/novaseven/seven-filepicker.git",
+          "httpsUrl": "git+https://github.com/novaseven/seven-filepicker.git",
+          "gitUrl": "git://github.com/novaseven/seven-filepicker.git",
+          "shortcut": "github:novaseven/seven-filepicker",
+          "directUrl": "https://raw.githubusercontent.com/novaseven/seven-filepicker/master/package.json"
+        }
+      },
+      "F:\\Test-Mobile"
+    ]
+  ],
+  "_from": "git+https://github.com/novaseven/seven-filepicker.git",
+  "_id": "seven-filepicker@1.0.0",
+  "_inCache": true,
+  "_location": "/seven-filepicker",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "seven-filepicker@git+https://github.com/novaseven/seven-filepicker.git",
+    "scope": null,
+    "escapedName": "seven-filepicker",
+    "name": "seven-filepicker",
+    "rawSpec": "git+https://github.com/novaseven/seven-filepicker.git",
+    "spec": "git+https://github.com/novaseven/seven-filepicker.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:novaseven/seven-filepicker.git",
+      "sshUrl": "git+ssh://git@github.com/novaseven/seven-filepicker.git",
+      "httpsUrl": "git+https://github.com/novaseven/seven-filepicker.git",
+      "gitUrl": "git://github.com/novaseven/seven-filepicker.git",
+      "shortcut": "github:novaseven/seven-filepicker",
+      "directUrl": "https://raw.githubusercontent.com/novaseven/seven-filepicker/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/novaseven/seven-filepicker.git#ecc4e2c8f6c0ba7b64bd0612b40eb7008cb371f8",
+  "_shasum": "1b2ba9f787053192ed36463013acec545c6f02f1",
+  "_shrinkwrap": null,
+  "_spec": "seven-filepicker@git+https://github.com/novaseven/seven-filepicker.git",
+  "_where": "F:\\Test-Mobile",
+  "bugs": {
+    "url": "https://github.com/novaseven/seven-filepicker/issues"
+  },
+  "dependencies": {},
+  "description": "A React Native module that allows you to use native UI to select file from the device library",
+  "devDependencies": {
+    "react-native": "^0.21.0"
+  },
+  "gitHead": "ecc4e2c8f6c0ba7b64bd0612b40eb7008cb371f8",
+  "homepage": "https://github.com/novaseven/seven-filepicker#readme",
+  "keywords": [
+    "react-native",
+    "seven-filepicker",
+    "react",
+    "native",
+    "file",
+    "picker"
+  ],
+  "name": "seven-filepicker",
+  "nativePackage": true,
+  "optionalDependencies": {},
+  "readme": "# seven-filepicker\r\nA React Native module that allows you to use native UI to select a file from the device library\r\nBased on [react-native-image-picker](https://github.com/marcshilling/react-native-image-picker)\r\n\r\n## Install\r\n\r\n### iOS\r\n1. `npm install react-native-fille-picker@latest --save`\r\n2. In the XCode's \"Project navigator\", right click on your project's Libraries folder ➜ `Add Files to <...>`\r\n3. Go to `node_modules` ➜ `seven-filepicker` ➜ `ios` ➜ select `RNFilePicker.xcodeproj`\r\n4. Add `RNFilePicker.a` to `Build Phases -> Link Binary With Libraries`\r\n5. Compile and have fun\r\n\r\n### Android\r\n1. `npm install seven-filepicker@latest --save`\r\n\r\n```gradle\r\n// file: android/settings.gradle\r\n...\r\n\r\ninclude ':seven-filepicker'\r\nproject(':seven-filepicker').projectDir = new File(settingsDir, '../node_modules/seven-filepicker/android')\r\n```\r\n```gradle\r\n// file: android/app/build.gradle\r\n...\r\n\r\ndependencies {\r\n    ...\r\n    compile project(':seven-filepicker')\r\n}\r\n```\r\n```xml\r\n<!-- file: android/src/main/AndroidManifest.xml -->\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    package=\"com.myApp\">\r\n\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n\r\n    <!-- add following permissions -->\r\n    <uses-permission android:name=\"android.permission.CAMERA\" />\r\n    <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>\r\n    <uses-feature android:name=\"android.hardware.camera\" android:required=\"true\"/>\r\n    <uses-feature android:name=\"android.hardware.camera.autofocus\" />\r\n    <!-- -->\r\n    ...\r\n```\r\n```java\r\n// file: MainActivity.java\r\n...\r\n\r\nimport com.filepicker.FilePickerPackage; // import package\r\n\r\npublic class MainActivity extends ReactActivity {\r\n\r\n   /**\r\n   * A list of packages used by the app. If the app uses additional views\r\n   * or modules besides the default ones, add more packages here.\r\n   */\r\n    @Override\r\n    protected List<ReactPackage> getPackages() {\r\n        return Arrays.<ReactPackage>asList(\r\n            new MainReactPackage(),\r\n            new FilePickerPackage() // Add package\r\n        );\r\n    }\r\n...\r\n}\r\n\r\n```\r\n## Usage\r\n1. In your React Native javascript code, bring in the native module:\r\n\r\n  ```javascript\r\nvar FilePickerManager = require('NativeModules').FilePickerManager;\r\n  ```\r\n2. Use it like so:\r\n\r\n  When you want to display the picker:\r\n  ```javascript\r\n\r\n  FilePickerManager.showFilePicker((response) => {\r\n    console.log('Response = ', response);\r\n\r\n    if (response.didCancel) {\r\n      console.log('User cancelled file picker');\r\n    }\r\n    else if (response.error) {\r\n      console.log('FilePickerManager Error: ', response.error);\r\n    }\r\n    else {\r\n      this.setState({\r\n        file: response\r\n      });\r\n    }\r\n  });\r\n  ```\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/novaseven/seven-filepicker.git"
+  },
+  "version": "1.0.0"
+}
